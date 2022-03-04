@@ -1,4 +1,5 @@
 from views import app
+from controllers import controllers
 
 
 @app.route('/')
