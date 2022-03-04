@@ -8,11 +8,13 @@ from controllers import controllers
 def index():
     return "Welcome To Our Server"
 
+
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     email_address = request.form['email_id']
     password = request.form['password']
-    return controllers.register(email_address, password)
+    return controllers.registration(email_address, password)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

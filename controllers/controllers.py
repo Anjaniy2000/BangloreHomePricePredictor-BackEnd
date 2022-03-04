@@ -22,8 +22,8 @@ def predict_home_price(total_sqft, location, bhk, bath, balcony):
     return response
 
 
-def login(email_address, password):
-    flag = authFunctions.login(email_address, password)
+def registration(email_address, password):
+    flag = authFunctions.registration(email_address, password)
 
     if flag == 1:
         response = jsonify({
@@ -41,5 +41,20 @@ def login(email_address, password):
         return response
 
 
-def register(email_address, password):
-    return None
+def login(email_address, password):
+    flag = authFunctions.login(email_address, password)
+
+    if flag == 1:
+        response = jsonify({
+            'response_text': 'Successful'
+        })
+        # response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
+    else:
+        response = jsonify({
+            'response_text': 'Failed'
+        })
+        # response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
