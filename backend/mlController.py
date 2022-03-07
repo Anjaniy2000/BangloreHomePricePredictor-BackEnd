@@ -8,7 +8,6 @@ __model = None
 
 
 def get_estimated_price(location, sqft, bhk, bath, balcony):
-    load_saved_artifacts()
     try:
         loc_index = __data_columns.index(location.lower())
     except:
@@ -26,7 +25,7 @@ def get_estimated_price(location, sqft, bhk, bath, balcony):
 
 
 def load_saved_artifacts():
-    # print("Loading Saved Artifacts.....Start")
+    print("Loading Saved Artifacts.....Start")
     global __data_columns
     global __locations
 
@@ -38,12 +37,15 @@ def load_saved_artifacts():
     if __model is None:
         with open('Banglore_Home_Price_Predictor.pickle', 'rb') as f:
             __model = pickle.load(f)
-    # print("Loading Saved Artifacts.....Done")
+    print("Loading Saved Artifacts.....Done")
 
 
 def get_location_names():
-    load_saved_artifacts()
     return __locations
+
+
+def get_data_columns():
+    return __data_columns
 
 
 if __name__ == '__main__':
