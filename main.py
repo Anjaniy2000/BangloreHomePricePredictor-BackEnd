@@ -142,6 +142,6 @@ def predict_home_price():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 33507))
     print("Starting Python Flask Server For Home Price Prediction...")
-    app.run(host='0.0.0.0', port=port, debug=True)
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=PORT, debug=True)
