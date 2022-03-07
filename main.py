@@ -1,7 +1,10 @@
+import os
+
 from flask import Flask, request, jsonify
 from controllers import auth, ml
 
 app = Flask(__name__)
+port = int(os.environ.get('PORT', 33507))
 
 
 @app.route('/')
@@ -141,4 +144,4 @@ def predict_home_price():
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=port)
