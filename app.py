@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, request, jsonify
-import mlController
+from backend import mlController
 
 app = Flask(__name__)
 
