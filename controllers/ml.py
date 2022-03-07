@@ -29,13 +29,13 @@ def load_saved_artifacts():
     global __data_columns
     global __locations
 
-    with open("ml-data/Columns.json", "r") as f:
+    with open("Columns.json", "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[4:]  # first 4 columns are sqft, bath, bhk, balcony
 
     global __model
     if __model is None:
-        with open('ml-data/Banglore_Home_Price_Predictor.pickle', 'rb') as f:
+        with open('Banglore_Home_Price_Predictor.pickle', 'rb') as f:
             __model = pickle.load(f)
     print("Loading Saved Artifacts.....Done")
 
