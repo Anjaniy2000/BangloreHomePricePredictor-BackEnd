@@ -8,6 +8,7 @@ __model = None
 
 
 def get_estimated_price(location, sqft, bhk, bath, balcony):
+    load_saved_artifacts()
     try:
         loc_index = __data_columns.index(location.lower())
     except:
@@ -41,10 +42,12 @@ def load_saved_artifacts():
 
 
 def get_location_names():
+    load_saved_artifacts()
     return __locations
 
 
 def get_data_columns():
+    load_saved_artifacts()
     return __data_columns
 
 

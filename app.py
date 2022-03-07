@@ -39,6 +39,5 @@ def predict_home_price():
 
 if __name__ == "__main__":
     print("Starting python Flask Server For Home Price Prediction...")
-    mlController.load_saved_artifacts()
     PORT = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=PORT, debug=True)
